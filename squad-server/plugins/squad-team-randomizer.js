@@ -112,17 +112,6 @@ export default class SquadTeamRandomizer extends BasePlugin {
       team = team === '1' ? '2' : '1';
     }
 
-    // Shuffle no-squad players
-    currentIndex = noSquadPlayers.length;
-    while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      temporaryValue = noSquadPlayers[currentIndex];
-      noSquadPlayers[currentIndex] = noSquadPlayers[randomIndex];
-      noSquadPlayers[randomIndex] = temporaryValue;
-    }
-
     // Calculate how many noSquadPlayers need to go to each team
     const team1Needed = targetTeamSize - team1Size;
     const team2Needed = targetTeamSize - team2Size;
